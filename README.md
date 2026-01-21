@@ -1,73 +1,86 @@
-# React + TypeScript + Vite
+# Stack Underflow – Frontend Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Stack Overflow–like Single Page Application (SPA) built with React, following the given frontend challenge requirements.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## React Compiler
+This project demonstrates:
+- A Single Page Application (SPA)
+- Mocked authentication (no backend)
+- In-memory state management
+- Basic but clean UI
+- Clear separation of concerns
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+All data (authentication, questions, comments) lives **only in memory** and resets on page refresh, exactly as required.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- Bun (runtime)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Requirements Implemented
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Mocked login (any username & password)
+- Logged-in state persists until page refresh
+- Question list view
+- Question detail view
+- Create & edit questions (owner only)
+- Add & edit comments (owner only)
+- Question status management (open / answered / closed)
+- In-memory data only (no persistence, no backend)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Getting Started
+
+### Prerequisites
+
+Make sure you have:
+- Node.js (>= 18)
+- npm
+- Bun
+
+---
+
+## Installation & Running the App
+
+> ⚠️ **Important Note**  
+> This project requires installing dependencies with **npm first**, followed by **bun**.
+>  
+> Installing dependencies using **bun only** may cause module resolution issues.
+
+
+### Option 1 – Using npm (Recommended)
+### Step 1 – Install dependencies using npm
+npm install
+
+### Step 2 – Run the development server
+npm run dev
+
+### The app will be available at:
+http://localhost:5173
+
+
+
+### Option 2 – Using Bun (Optional)
+### Step 1 – Install dependencies using npm
+npm install
+
+### Step 2 – Install dependencies using bun
+bun install
+
+### Step 3 – Run the development server
+bun run dev
+
+### The app will be available at:
+http://localhost:5173
